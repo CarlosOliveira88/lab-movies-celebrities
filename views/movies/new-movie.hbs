@@ -2,23 +2,31 @@
 
     <h2>Agregar nueva película</h2>
 
-    <form action="/movies/create" method="POST">
-        <label for="title">Título:</label>
-        <input type="text" id="title" name="title" required>
 
-        <label for="genre">Género:</label>
-        <input type="text" id="genre" name="genre" required>
+    <div class="input-group mb-3">
+        <form action="/movies/create" method="POST">
+            <span class="input-group-text" id="inputGroup-sizing-default">Título:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" id="title" name="title">
 
-        <label for="plot">Trama:</label>
-        <textarea id="plot" name="plot" required></textarea>
+            <span class="input-group-text" id="inputGroup-sizing-default">Género:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" id="genre" name="genre">
 
-        <label for="cast">Elenco:</label>
-        <select id="cast" name="cast" multiple required>
-            {{#each celebrities}}
-            <option value="{{this._id}}">{{this.name}}</option>
-            {{/each}}
-        </select>
+            <span class="input-group-text" id="inputGroup-sizing-default">Trama:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" id="plot" name="plot">
 
-        <button type="submit">Agregar película</button>
-    </form>
+            <span class="input-group-text" id="inputGroup-sizing-default">Elenco:</span>
+            <select id="cast" name="cast" multiple required>
+                {{#each celebrities}}
+                <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+
+
+            <button type="submit">Agregar película</button>
+
+        </form>
+    </div>
 </div>

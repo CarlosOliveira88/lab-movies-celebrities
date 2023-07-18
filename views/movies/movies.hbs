@@ -1,7 +1,10 @@
 <h2>Lista de películas</h2>
+<div class="container-fluid">
 
-<ul>
-    {{#each movies}}
-    <li><a href="/movies/{{this._id}}">{{this.title}}</a></li>
-    {{/each}}
-</ul>
+
+    <ul>
+        {{#each movies}}
+        <li><a href="/movies/{{this._id}}">{{this.title}}</a></li>
+        {{/each}}
+    </ul>
+</div>

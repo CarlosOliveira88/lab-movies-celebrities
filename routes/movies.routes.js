@@ -4,14 +4,28 @@ const Movie = require('../models/Movie.model');
 const Celebrity = require('../models/Celebrity.model');
 
 
+router.get('/', (req, res, next) => {
+    Movie.find().then((respuesta) => {
+        res.render('movies/movies', { movies: respuesta });
+    })
+
+});
+
+
 router.get('/create', (req, res, next) => {
-    Celebrity.find({}, (err, celebrities) => {
-        if (err) {
-            res.render('error');
-        } else {
-            res.render('movies/new-movie', { celebrities });
-        }
-    });
+
+    // Celebrity.find({}, (err, Celebrity) => {
+    //     if (err) {
+    //         res.render('error');
+    //     } else {
+    //         res.render('movies/new-movie', { Celebrity });
+    //     }
+    // });
+
+    Celebrity.find().then((respuesta) => {
+        res.render('movies/new-movie', { celebrities: respuesta });
+    })
+
 });
 
 
